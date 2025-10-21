@@ -1,58 +1,83 @@
 "use client"
 
-import Navbar from "@/components/navbar"
+import FloatingDock, { defaultDockItems } from "@/components/ui/floating-dock"
+import { User, Users, Code, GraduationCap, FileText, DollarSign, UserCheck, Mail, MapPin, ExternalLink } from "lucide-react"
 
 export default function AboutPage() {
   const committee = [
     {
-      name: "Alex Chen",
+      name: "Adarsh Pradhan",
+      role: "Teacher Coordinator",
+      bio: "Faculty advisor guiding the club's academic direction and initiatives",
+      icon: UserCheck,
+    },
+    {
+      name: "Ritanjit Das",
       role: "President",
-      bio: "Full-stack developer passionate about building scalable applications",
-      icon: "👨‍💼",
+      bio: "Leading Codénix with vision and dedication to student success",
+      icon: User,
     },
     {
-      name: "Sarah Johnson",
+      name: "Subhrajyoti Goswami",
       role: "Vice President",
-      bio: "AI/ML enthusiast and data science expert",
-      icon: "👩‍💼",
+      bio: "Supporting club operations and member engagement initiatives",
+      icon: Users,
     },
     {
-      name: "Mike Davis",
-      role: "Technical Lead",
-      bio: "DevOps specialist with 5+ years of industry experience",
-      icon: "👨‍💻",
-    },
-    {
-      name: "Emma Wilson",
-      role: "Events Coordinator",
-      bio: "Organizes workshops and hackathons for the community",
-      icon: "👩‍🎓",
-    },
-    {
-      name: "James Brown",
-      role: "Content Manager",
-      bio: "Creates educational content and technical blogs",
-      icon: "📝",
-    },
-    {
-      name: "Lisa Anderson",
+      name: "Sandilya Baruah",
       role: "Treasurer",
-      bio: "Manages club finances and sponsorships",
-      icon: "💰",
+      bio: "Managing club finances and sponsorship coordination",
+      icon: DollarSign,
+    },
+    {
+      name: "Kumar Jigyas Pritam",
+      role: "Secretary",
+      bio: "Handling documentation and communication for club activities",
+      icon: FileText,
+    },
+  ]
+
+  const committeeMembers = [
+    "Akash Bora",
+    "Debasish Kashyab", 
+    "Suvradeep Dutta",
+    "Rishav Kumar Singh",
+    "Neelam Chakraborty"
+  ]
+
+  const activities = [
+    {
+      title: "Workshops & Sessions",
+      description: "In-depth training on essential tools like Git & GitHub and other modern technologies",
+      icon: Code,
+    },
+    {
+      title: "Ideathons and Hackathons", 
+      description: "Fostering innovation and collaborative problem-solving",
+      icon: GraduationCap,
+    },
+    {
+      title: "Career Guidance",
+      description: "Providing roadmap and guidance for prestigious competitions like Smart India Hackathon (SIH)",
+      icon: UserCheck,
+    },
+    {
+      title: "Interactive Learning",
+      description: "Engaging quizzes and tech-focused contests to make learning fun",
+      icon: Users,
     },
   ]
 
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-20 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-5xl font-bold mb-8 text-foreground">
             About <span className="text-gradient-gold animate-gradient-x">Codénix</span>
           </h1>
 
           <div
-            className="rounded-xl p-8 mb-16 space-y-4 animate-fade-in"
+            className="rounded-xl p-8 mb-16 space-y-4"
             style={{
               background: "rgba(18, 18, 18, 0.7)",
               backdropFilter: "blur(10px)",
@@ -60,32 +85,35 @@ export default function AboutPage() {
             }}
           >
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Codénix is a premier university coding club dedicated to fostering innovation, collaboration, and
-              excellence in software development. Founded in 2020, we have grown into a vibrant community of passionate
-              developers, designers, and tech enthusiasts.
+              Welcome to Codénix, the official coding club of Girijananda Chowdhury University. Established in 2024, 
+              Codénix was founded by a group of passionate students dedicated to fostering a vibrant and inclusive 
+              coding culture on campus.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Our mission is to provide a platform for students to learn, grow, and collaborate on exciting projects.
-              Through workshops, hackathons, mentorship programs, and community events, we empower the next generation
-              of tech leaders.
+              Our primary mission is to bridge the gap between theoretical knowledge and practical application. 
+              We aim to create a supportive environment where students can learn, collaborate, and grow their 
+              technical skills. We have a special focus on guiding our junior members as they begin their journey 
+              into the world of technology.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Whether you're writing your first "Hello, World!" or you're a seasoned coder, there's a place for you here.
             </p>
           </div>
 
           <h2 className="text-3xl font-bold mb-12 text-foreground">
-            Meet Our <span className="text-primary">Committee</span>
+            What We <span className="text-primary">Do</span>
           </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {committee.map((member, index) => (
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
+            {activities.map((activity, index) => (
               <div
                 key={index}
-                className="rounded-xl p-8 space-y-4 flex flex-col items-center text-center animate-fade-in"
+                className="rounded-xl p-6 space-y-4"
                 style={{
                   background: "rgba(18, 18, 18, 0.7)",
                   backdropFilter: "blur(10px)",
                   border: "1px solid rgba(212, 175, 55, 0.1)",
                   transition: "all 0.3s ease",
-                  animationDelay: `${index * 0.1}s`,
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = "rgba(18, 18, 18, 0.85)"
@@ -96,15 +124,176 @@ export default function AboutPage() {
                   e.currentTarget.style.borderColor = "rgba(212, 175, 55, 0.1)"
                 }}
               >
-                <div className="text-5xl">{member.icon}</div>
+                <div className="flex items-center gap-4">
+                  <div className="text-primary/70">
+                    <activity.icon size={32} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">{activity.title}</h3>
+                </div>
+                <p className="text-muted-foreground text-sm leading-relaxed">{activity.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="text-3xl font-bold mb-12 text-foreground">
+            Meet Our <span className="text-primary">Committee</span>
+          </h2>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {committee.map((member, index) => (
+              <div
+                key={index}
+                className="rounded-xl p-8 space-y-4 flex flex-col items-center text-center"
+                style={{
+                  background: "rgba(18, 18, 18, 0.7)",
+                  backdropFilter: "blur(10px)",
+                  border: "1px solid rgba(212, 175, 55, 0.1)",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "rgba(18, 18, 18, 0.85)"
+                  e.currentTarget.style.borderColor = "rgba(212, 175, 55, 0.3)"
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "rgba(18, 18, 18, 0.7)"
+                  e.currentTarget.style.borderColor = "rgba(212, 175, 55, 0.1)"
+                }}
+              >
+                <div className="text-5xl text-primary/70">
+                  <member.icon size={48} />
+                </div>
                 <h3 className="text-xl font-bold text-foreground">{member.name}</h3>
                 <p className="text-primary font-semibold text-sm">{member.role}</p>
                 <p className="text-muted-foreground text-sm leading-relaxed">{member.bio}</p>
               </div>
             ))}
           </div>
+
+          <h2 className="text-3xl font-bold mb-8 text-foreground mt-16">
+            Committee <span className="text-primary">Members</span>
+          </h2>
+
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16">
+            {committeeMembers.map((member, index) => (
+              <div
+                key={index}
+                className="rounded-lg p-4 text-center"
+                style={{
+                  background: "rgba(18, 18, 18, 0.5)",
+                  backdropFilter: "blur(10px)",
+                  border: "1px solid rgba(212, 175, 55, 0.1)",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "rgba(18, 18, 18, 0.7)"
+                  e.currentTarget.style.borderColor = "rgba(212, 175, 55, 0.3)"
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "rgba(18, 18, 18, 0.5)"
+                  e.currentTarget.style.borderColor = "rgba(212, 175, 55, 0.1)"
+                }}
+              >
+                <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-primary/20 flex items-center justify-center">
+                  <User size={24} className="text-primary/70" />
+                </div>
+                <h3 className="text-sm font-semibold text-foreground">{member}</h3>
+              </div>
+            ))}
+          </div>
+
+          <h2 className="text-3xl font-bold mb-8 text-foreground">
+            Contact <span className="text-primary">Information</span>
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
+            <div
+              className="rounded-xl p-6 space-y-4"
+              style={{
+                background: "rgba(18, 18, 18, 0.7)",
+                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(212, 175, 55, 0.1)",
+              }}
+            >
+              <div className="flex items-center gap-3">
+                <MapPin size={24} className="text-primary/70" />
+                <h3 className="text-xl font-semibold text-foreground">Address</h3>
+              </div>
+              <p className="text-muted-foreground">
+                Hathkhowapara, Azara, Guwahati, Assam 781017
+              </p>
+              <a 
+                href="https://maps.app.goo.gl/MPQw1KhonAo4WfrK8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+              >
+                <ExternalLink size={16} />
+                View on Map
+              </a>
+            </div>
+
+            <div
+              className="rounded-xl p-6 space-y-4"
+              style={{
+                background: "rgba(18, 18, 18, 0.7)",
+                backdropFilter: "blur(10px)",
+                border: "1px solid rgba(212, 175, 55, 0.1)",
+              }}
+            >
+              <div className="flex items-center gap-3">
+                <Mail size={24} className="text-primary/70" />
+                <h3 className="text-xl font-semibold text-foreground">Email</h3>
+              </div>
+              <div className="space-y-2">
+                <a 
+                  href="mailto:coding_club@gcuniversity.ac.in"
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                >
+                  coding_club@gcuniversity.ac.in
+                </a>
+                <a 
+                  href="mailto:info@gcuniversity.ac.in"
+                  className="block text-muted-foreground hover:text-primary transition-colors"
+                >
+                  info@gcuniversity.ac.in
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="rounded-xl p-6"
+            style={{
+              background: "rgba(18, 18, 18, 0.7)",
+              backdropFilter: "blur(10px)",
+              border: "1px solid rgba(212, 175, 55, 0.1)",
+            }}
+          >
+            <h3 className="text-xl font-semibold text-foreground mb-4">Social Media</h3>
+            <div className="flex gap-4">
+              <a 
+                href="https://www.linkedin.com/company/cod%C3%A9nix"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              >
+                <ExternalLink size={16} />
+                LinkedIn
+              </a>
+              <a 
+                href="https://www.instagram.com/codenix_gcu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              >
+                <ExternalLink size={16} />
+                Instagram
+              </a>
+            </div>
+          </div>
         </div>
       </section>
+      <FloatingDock items={defaultDockItems} />
     </main>
   )
 }

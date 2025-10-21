@@ -1,6 +1,6 @@
 "use client"
 
-import Navbar from "@/components/navbar"
+import FloatingDock, { defaultDockItems } from "@/components/ui/floating-dock"
 
 export default function BlogPage() {
   const posts = [
@@ -50,8 +50,7 @@ export default function BlogPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Navbar />
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-20 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-5xl font-bold mb-16 text-foreground">
             Our <span className="text-primary">Blog</span>
@@ -61,13 +60,12 @@ export default function BlogPage() {
             {posts.map((post, index) => (
               <article
                 key={index}
-                className="rounded-xl p-6 space-y-4 flex flex-col animate-fade-in"
+                className="rounded-xl p-6 space-y-4 flex flex-col"
                 style={{
                   background: "rgba(18, 18, 18, 0.7)",
                   backdropFilter: "blur(10px)",
                   border: "1px solid rgba(212, 175, 55, 0.1)",
                   transition: "all 0.3s ease",
-                  animationDelay: `${index * 0.1}s`,
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = "rgba(18, 18, 18, 0.85)"
@@ -97,6 +95,7 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+      <FloatingDock items={defaultDockItems} />
     </main>
   )
 }

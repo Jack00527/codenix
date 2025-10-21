@@ -1,0 +1,81 @@
+Event Title: Freshers’ Interactive Kickoff Session
+Date: 19th August 2025
+
+Codénix Club hosted a vibrant welcome event tailored for the newly joined freshers of the 2025 batch. With a strong turnout and enthusiastic participation, the 1.5-hour session was designed to spark curiosity, dispel fears, and guide students toward meaningful learning paths in tech.
+Session 1: Mythbusters – “Will AI Take Our Jobs?
+We kicked off with a thought-provoking discussion around a common concern: Will AI replace human jobs?
+    • Students were invited to share their opinions, followed by a presentation of real-world data and trends.
+    • Through interactive dialogue, we debunked the myth and emphasized how AI is more likely to augment human capabilities than replace them.
+    • The session helped boost confidence and encouraged a future-ready mindset.
+
+Session 2: Understanding the basic Tech Stack
+Next, we introduced freshers to the foundational tech stacks across major domains like web development, game development, Ai/ML and more.
+We discussed industry-recommended stacks and offered guidance on how to begin learning them, aligning with current job market trends. The goal was to empower students with clarity and direction for their tech journey.
+
+---------------------------------------------------------------------
+Event Title: SIH Hackathon Roadmap Guide
+Date: 26th August 2025
+
+Codénix Club hosted a two-part session packed with beginner-friendly insights and interactive learning.
+Session 1: Smart India Hackathon (SIH) Roadmap
+This session provided a strategic walkthrough of the SIH journey, designed to empower freshers and first-time participants. Previous SIH winners from our university led the session with clarity and precision, covering:
+    • Understanding SIH: An overview of the national-level innovation challenge, its significance, and the opportunities it offers to students.
+    • How to Participate: Step-by-step guidance on registration, team formation, and eligibility.
+    • Choosing the Right Problem Statement: Practical tips on evaluating domains, aligning with team strengths, and identifying impactful challenges.
+    • Building a Prototype: Best practices for ideation, MVP development, and iterative refinement.
+    • Selection Tips and Strategy: Insights into evaluation criteria, presentation skills, and documentation techniques.
+Participants left with a clear action plan and renewed confidence to participate in SIH.
+
+Session 2: HTML Basics - A Gentle Introduction
+The session began by establishing that HTML is the technology that defines the content and structure of any website.
+Learning the Core Concepts: Members were taught the fundamental building blocks of HTML:
+    • Tags: It was explained that an element consists of an opening tag, the content itself, and a closing tag.
+    • Nesting: The concept of placing elements inside other elements, known as nesting, was also introduced.
+    • Attributes: Members learned that attributes provide extra information about an element and are written inside the opening tag.
+Exploring Common HTML Tags: A significant portion of the session was dedicated to exploring common HTML tags and their practical uses, including how to structure various types of content like text, lists, links, media
+---------------------------------------------------------------------
+Event Title: Git & Github for Beginners
+Date: 9th September 2025
+
+The Codénix Club hosted an introductory session on Git and GitHub aimed at empowering new students with essential version control skills. The session covered the following key topics:
+    • Installing Git: Step-by-step guidance on setting up Git on various operating systems.
+    • Creating Repositories: Demonstration of initializing local repositories and connecting them to GitHub.
+    • Basic Git Commands: Hands-on usage of commands like git init, git add, git commit, git push, and git clone etc...
+    • Understanding GitHub: Explanation of GitHub’s role as a cloud-based collaboration platform.
+    • Profile Setup: Walkthrough on creating a GitHub account and optimizing the profile.
+    • GitHub Pro for Students: Instructions on applying for GitHub Student Developer Pack, highlighting its benefits.
+The session was interactive, with live demonstrations and Q&A segments that encouraged active participation. Students gained practical knowledge and were introduced to collaborative development workflows
+
+---------------------------------------------------------------------
+Event Title: Ideathon
+Dare: 15th September 2025
+
+On 16th September 2025, our coding club successfully hosted the internal round for the Smart India Hackathon (SIH) 2025. The event served as a platform for shortlisting the most promising teams to represent our institution in the national-level competition. Held at the MCA Lab, the session brought together innovation, collaboration, and critical feedback in a tightly packed two-hour window. 
+
+A panel of esteemed judges was present to evaluate the teams based on:
+    • Problem understanding and relevance
+    • Technical approach and innovation
+    • Presentation clarity and teamwork
+    • Scalability and potential impact
+Judges also provided constructive feedback and suggestions to help teams refine their ideas before the final submission. Their insights were instrumental in guiding participants toward more robust and user-centric solutions.
+The MCA Lab buzzed with energy as club members actively supported the teams, asked questions, and engaged in discussions. The event fostered a spirit of healthy competition and peer learning, reinforcing our club’s commitment to nurturing talent and promoting collaborative growth. 
+
+The internal round concluded with the judges shortlisting top-performing teams for further mentoring and preparation. These teams will now move forward to represent our university in the official SIH 2025 submission process. 
+
+---------------------------------------------------------------------
+Event Title: Smart India Hackathon - Internal Round
+Date: 16th September 2025
+
+On 16th September 2025, our coding club successfully hosted the internal round for the Smart India Hackathon (SIH) 2025. The event served as a platform for shortlisting the most promising teams to represent our institution in the national-level competition. Held at the MCA Lab, the session brought together innovation, collaboration, and critical feedback in a tightly packed two-hour window. 
+
+A panel of esteemed judges was present to evaluate the teams based on:
+    • Problem understanding and relevance
+    • Technical approach and innovation
+    • Presentation clarity and teamwork
+    • Scalability and potential impact
+Judges also provided constructive feedback and suggestions to help teams refine their ideas before the final submission. Their insights were instrumental in guiding participants toward more robust and user-centric solutions.
+The MCA Lab buzzed with energy as club members actively supported the teams, asked questions, and engaged in discussions. The event fostered a spirit of healthy competition and peer learning, reinforcing our club’s commitment to nurturing talent and promoting collaborative growth. 
+
+The internal round concluded with the judges shortlisting top-performing teams for further mentoring and preparation. These teams will now move forward to represent our university in the official SIH 2025 submission process. 
+
+
