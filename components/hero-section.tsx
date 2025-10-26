@@ -80,7 +80,7 @@ export default function HeroSection() {
             <div className="text-center space-y-4">
               <div className="relative w-32 h-10 mx-auto">
                 <Image 
-                  src="/codenix-logo.svg" 
+                  src="/Club-Banner.png" 
                   alt="CODÉNIX Logo" 
                   fill 
                   className="object-contain"

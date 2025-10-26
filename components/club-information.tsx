@@ -51,7 +51,7 @@ export default function ClubInformation() {
           <div className="flex flex-col items-center space-y-3 sm:space-y-4 mb-4 sm:mb-6">
             <div className="relative w-24 h-8 sm:w-32 sm:h-10">
               <Image 
-                src="/codenix-logo.svg" 
+                src="/Club-Banner.png" 
                 alt="CODÉNIX Logo" 
                 fill 
                 className="object-contain"

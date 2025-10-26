@@ -136,7 +136,7 @@ export default function BannerCarousel() {
         onClick={prevSlide}
         onMouseEnter={() => setIsAutoPlaying(false)}
         onMouseLeave={() => setIsAutoPlaying(true)}
-        className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-transparent hover:bg-background/20 backdrop-blur-sm border border-transparent hover:border-border/30 transition-all duration-200 z-20"
+        className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full transition-all duration-200 z-20"
       >
         <ChevronLeft className="h-4 w-4 md:h-6 md:w-6 text-foreground/70 hover:text-foreground" />
       </button>
@@ -145,7 +145,7 @@ export default function BannerCarousel() {
         onClick={nextSlide}
         onMouseEnter={() => setIsAutoPlaying(false)}
         onMouseLeave={() => setIsAutoPlaying(true)}
-        className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-transparent hover:bg-background/20 backdrop-blur-sm border border-transparent hover:border-border/30 transition-all duration-200 z-20"
+        className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full transition-all duration-200 z-20"
       >
         <ChevronRight className="h-4 w-4 md:h-6 md:w-6 text-foreground/70 hover:text-foreground" />
       </button>
