@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { IconLayoutNavbarCollapse } from "@tabler/icons-react";
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence, MotionValue } from "motion/react";
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence, MotionValue } from "framer-motion";
 import { useRef, useState } from "react";
 import { Home, Folder, Trophy, Mail, User } from "lucide-react";
 
@@ -75,7 +75,7 @@ const FloatingDockDesktop = ({ items, className }: { items: DockItem[]; classNam
 
   return (
     <motion.div
-      onMouseMove={(e) => mouseX.set(e.pageX)}
+      onMouseMove={(e: React.MouseEvent) => mouseX.set(e.pageX)}
       onMouseLeave={() => mouseX.set(Infinity)}
       className={cn(
         "fixed bottom-6 left-1/2 -translate-x-1/2 z-40 hidden h-16 items-end gap-4 rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3 md:flex shadow-sm",
@@ -93,7 +93,7 @@ const FloatingDockDesktop = ({ items, className }: { items: DockItem[]; classNam
 function IconContainer({ mouseX, title, icon, href }: DockItem & { mouseX: MotionValue }) {
   const ref = useRef<HTMLDivElement>(null);
 
-  const distance = useTransform(mouseX, (val) => {
+  const distance = useTransform(mouseX, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     return val - bounds.x - bounds.width / 2;
   });

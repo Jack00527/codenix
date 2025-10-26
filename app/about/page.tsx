@@ -1,7 +1,9 @@
 "use client"
 
 import FloatingDock, { defaultDockItems } from "@/components/ui/floating-dock"
+import Footer from "@/components/footer"
 import { User, Users, Code, GraduationCap, FileText, DollarSign, UserCheck, Mail, MapPin, ExternalLink } from "lucide-react"
+import Image from "next/image"
 
 export default function AboutPage() {
   const committee = [
@@ -72,9 +74,24 @@ export default function AboutPage() {
     <main className="min-h-screen bg-background">
       <section className="pt-20 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl font-bold mb-8 text-foreground">
-            About <span className="text-gradient-gold animate-gradient-x">Codénix</span>
-          </h1>
+          <div className="flex flex-col md:flex-row items-center gap-4 mb-12">
+            <div className="relative w-32 h-32">
+              <Image 
+                src="/Logo-White.png" 
+                alt="Codénix Logo" 
+                fill 
+                className="object-contain"
+              />
+            </div>
+            <div>
+              <h1 className="text-5xl font-bold mb-2 text-foreground">
+                About <span className="text-gradient-gold animate-gradient-x">Codénix</span>
+              </h1>
+              <p className="text-lg text-muted-foreground">
+                Official Coding Club of Girijananda Chowdhury University
+              </p>
+            </div>
+          </div>
 
           <div
             className="rounded-xl p-8 mb-16 space-y-4"
@@ -293,6 +310,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <Footer />
       <FloatingDock items={defaultDockItems} />
     </main>
   )

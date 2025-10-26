@@ -1,0 +1,34 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle with text -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="white" stroke-width="2"/>
+  
+  <!-- University name text on top arc -->
+  <path id="topArc" d="M 30 100 A 70 70 0 0 1 170 100" fill="none"/>
+  <text fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">
+    <textPath href="#topArc" startOffset="0%">
+      GIRIJANANDA CHOWDHURY UNIVERSITY
+    </textPath>
+  </text>
+  
+  <!-- Assam text on bottom arc -->
+  <path id="bottomArc" d="M 170 100 A 70 70 0 0 1 30 100" fill="none"/>
+  <text fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">
+    <textPath href="#bottomArc" startOffset="50%">
+      * ASSAM *
+    </textPath>
+  </text>
+  
+  <!-- Inner dashed circle -->
+  <circle cx="100" cy="100" r="60" fill="none" stroke="white" stroke-width="1" stroke-dasharray="3,3"/>
+  
+  <!-- Pen nib in center -->
+  <g transform="translate(100, 100)">
+    <!-- Pen nib -->
+    <path d="M -8 -15 L 8 -15 L 4 0 L 0 5 L -4 0 Z" fill="white"/>
+    <!-- Pen hole -->
+    <circle cx="0" cy="-8" r="1.5" fill="black"/>
+    <!-- Lightning bolt -->
+    <path d="M 12 -8 L 8 -2 L 12 2 L 6 8 L 10 2 L 6 -2 Z" fill="white"/>
+  </g>
+</svg>
+

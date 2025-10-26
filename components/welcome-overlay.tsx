@@ -32,15 +32,6 @@ export default function WelcomeOverlay() {
         <p className="text-lg md:text-xl text-muted-foreground animate-fade-in" style={{ animationDelay: "0.3s" }}>
           Girijananda Chowdhury University Coding Club
         </p>
-        <div className="flex justify-center gap-2 pt-4">
-          {[...Array(3)].map((_, i) => (
-            <div
-              key={i}
-              className="w-2 h-2 rounded-full bg-primary animate-glow"
-              style={{ animationDelay: `${i * 0.2}s` }}
-            />
-          ))}
-        </div>
       </div>
     </div>
   )

@@ -1,6 +1,7 @@
 "use client"
 
 import FloatingDock, { defaultDockItems } from "@/components/ui/floating-dock"
+import Footer from "@/components/footer"
 import { Trophy, Star, Medal, Users, Rocket, Handshake } from "lucide-react"
 import Image from "next/image"
 
@@ -18,9 +19,24 @@ export default function AchievementsPage() {
     <main className="min-h-screen bg-background">
       <section className="pt-20 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-5xl font-bold mb-16 text-foreground">
-            Our <span className="text-primary">Achievements</span>
-          </h1>
+          <div className="flex flex-col md:flex-row items-center gap-4 mb-16">
+            <div className="relative w-32 h-32">
+              <Image 
+                src="/Logo-White.png" 
+                alt="Codénix Logo" 
+                fill 
+                className="object-contain"
+              />
+            </div>
+            <div>
+              <h1 className="text-5xl font-bold mb-2 text-foreground">
+                Our <span className="text-primary">Achievements</span>
+              </h1>
+              <p className="text-lg text-muted-foreground">
+                Celebrating Excellence at Girijananda Chowdhury University
+              </p>
+            </div>
+          </div>
 
           <div className="flex justify-center">
             <div
@@ -81,6 +97,7 @@ export default function AchievementsPage() {
           </div>
         </div>
       </section>
+      <Footer />
       <FloatingDock items={defaultDockItems} />
     </main>
   )

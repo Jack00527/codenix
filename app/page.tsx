@@ -2,9 +2,15 @@
 
 import { useEffect, useState } from "react"
 import WelcomeOverlay from "@/components/welcome-overlay"
-import HeroSection from "@/components/hero-section"
-import FeaturedSection from "@/components/featured-section"
+import BannerCarousel from "@/components/banner-carousel"
+import NewsAnnouncements from "@/components/news-announcements"
+import ClubInformation from "@/components/club-information"
+import BlogHighlights from "@/components/blog-highlights"
+import Testimonials from "@/components/testimonials"
+import SocialFeed from "@/components/social-feed"
+import ProjectGallery from "@/components/project-gallery"
 import FloatingDock, { defaultDockItems } from "@/components/ui/floating-dock"
+import Footer from "@/components/footer"
 
 export default function Home() {
   const [showOverlay, setShowOverlay] = useState(false)
@@ -33,8 +39,14 @@ export default function Home() {
         <WelcomeOverlay />
       ) : (
         <>
-          <HeroSection />
-          <FeaturedSection />
+          <BannerCarousel />
+          <NewsAnnouncements />
+          <ClubInformation />
+          <BlogHighlights />
+          <Testimonials />
+          <SocialFeed />
+          <ProjectGallery />
+          <Footer />
           <FloatingDock items={defaultDockItems} />
         </>
       )}

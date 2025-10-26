@@ -1,0 +1,44 @@
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with binary pattern -->
+  <defs>
+    <pattern id="binaryPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <text x="2" y="8" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.1)">0</text>
+      <text x="12" y="15" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.1)">1</text>
+      <text x="8" y="4" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.05)">1</text>
+      <text x="15" y="12" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.05)">0</text>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="300" height="100" fill="black"/>
+  <rect width="300" height="100" fill="url(#binaryPattern)"/>
+  
+  <!-- CODÉNIX Logo - Stylized N with curly braces -->
+  <g transform="translate(20, 20)">
+    <!-- Left curly brace -->
+    <path d="M 0 0 Q -5 10 0 20 Q 5 30 0 40 Q -5 50 0 60" 
+          stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="2" fill="white"/>
+    <circle cx="0" cy="60" r="2" fill="white"/>
+    
+    <!-- Right curly brace -->
+    <path d="M 40 0 Q 45 10 40 20 Q 35 30 40 40 Q 45 50 40 60" 
+          stroke="white" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <circle cx="40" cy="0" r="2" fill="white"/>
+    <circle cx="40" cy="60" r="2" fill="white"/>
+    
+    <!-- Diagonal stroke connecting the braces -->
+    <line x1="0" y1="30" x2="40" y2="30" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  
+  <!-- CODÉNIX Text -->
+  <text x="80" y="45" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white">
+    CODÉNIX
+  </text>
+  
+  <!-- GCU CODING CLUB Text -->
+  <text x="80" y="65" font-family="Arial, sans-serif" font-size="12" font-weight="normal" fill="white">
+    GCU CODING CLUB
+  </text>
+</svg>
+
