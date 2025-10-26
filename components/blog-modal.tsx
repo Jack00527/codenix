@@ -97,19 +97,19 @@ export default function BlogModal({
                 variant="outline"
                 onClick={onPrevious}
                 disabled={!hasPrevious}
-                className="flex items-center space-x-2"
+                className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm px-2 sm:px-4 py-1.5 sm:py-2"
               >
-                <ArrowLeft className="h-4 w-4" />
+                <ArrowLeft className="h-3 w-3 sm:h-4 sm:w-4" />
                 <span>Previous</span>
               </Button>
               <Button
                 variant="outline"
                 onClick={onNext}
                 disabled={!hasNext}
-                className="flex items-center space-x-2"
+                className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm px-2 sm:px-4 py-1.5 sm:py-2"
               >
                 <span>Next</span>
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
               </Button>
             </div>
           )}

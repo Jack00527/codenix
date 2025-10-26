@@ -3,6 +3,7 @@
 import { Calendar, ExternalLink, Bell, Trophy, BookOpen, Users } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { useRouter } from "next/navigation"
 
 const newsData = [
   {
@@ -57,20 +58,26 @@ const getPriorityColor = (priority: string) => {
 }
 
 export default function NewsAnnouncements() {
+  const router = useRouter()
+
+  const handleViewAllNews = () => {
+    router.push('/blog')
+  }
+
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <Bell className="h-8 w-8 text-primary" />
-            <h2 className="text-4xl font-bold text-foreground">News & Announcements</h2>
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="flex items-center justify-center space-x-2 mb-3 sm:mb-4">
+            <Bell className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">News & Announcements</h2>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Stay updated with the latest news, events, and announcements from Codénix
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {newsData.map((item) => (
             <Card 
               key={item.id}
@@ -112,7 +119,10 @@ export default function NewsAnnouncements() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="inline-flex items-center space-x-2 px-4 py-2 sm:px-6 sm:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 font-medium text-sm sm:text-base">
+          <button 
+            onClick={handleViewAllNews}
+            className="inline-flex items-center space-x-2 px-4 py-2 sm:px-6 sm:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 font-medium text-sm sm:text-base"
+          >
             <span>View All News</span>
             <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
           </button>

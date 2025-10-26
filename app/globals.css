@@ -127,6 +127,32 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Performance optimizations */
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Optimize animations for better performance */
+  .animate-gradient-x,
+  .animate-blur-in,
+  .animate-blur-out,
+  .animate-fade-in,
+  .animate-glow {
+    will-change: transform, opacity;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
 @layer utilities {
@@ -281,5 +307,39 @@
 
   .animate-glow {
     animation: glow 2s ease-in-out infinite;
+  }
+  
+  /* Mobile-first responsive utilities */
+  .mobile-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .mobile-text {
+    @apply text-sm sm:text-base md:text-lg;
+  }
+  
+  .mobile-heading {
+    @apply text-2xl sm:text-3xl md:text-4xl;
+  }
+  
+  /* Optimize images and media */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Improve touch targets for mobile */
+  button, 
+  [role="button"],
+  input[type="submit"],
+  input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Better focus states for accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
   }
 }

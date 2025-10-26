@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import BlogModal from "@/components/blog-modal"
 import { blogPosts, BlogPost } from "@/lib/blog-data"
+import { useRouter } from "next/navigation"
 
 const getCategoryColor = (category: string) => {
   switch (category) {
@@ -24,6 +25,7 @@ const getCategoryColor = (category: string) => {
 export default function BlogHighlights() {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const router = useRouter()
   
   const featuredPost = blogPosts.find(post => post.featured)
   const regularPosts = blogPosts.filter(post => !post.featured)
@@ -54,21 +56,25 @@ export default function BlogHighlights() {
     }
   }
 
+  const handleViewAllPosts = () => {
+    router.push('/blog')
+  }
+
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <BookOpen className="h-8 w-8 text-primary" />
-            <h2 className="text-4xl font-bold text-foreground">Blog Highlights</h2>
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="flex items-center justify-center space-x-2 mb-3 sm:mb-4">
+            <BookOpen className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Blog Highlights</h2>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Insights, tutorials, and industry trends from our community of developers
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
           {/* Featured Post */}
           {featuredPost && (
             <div className="lg:col-span-2">
@@ -164,7 +170,10 @@ export default function BlogHighlights() {
 
         {/* View All Button */}
         <div className="text-center mt-12">
-          <button className="inline-flex items-center space-x-2 px-4 py-2 sm:px-6 sm:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 font-medium text-sm sm:text-base">
+          <button 
+            onClick={handleViewAllPosts}
+            className="inline-flex items-center space-x-2 px-4 py-2 sm:px-6 sm:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-200 font-medium text-sm sm:text-base"
+          >
             <span>View All Posts</span>
             <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
           </button>

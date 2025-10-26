@@ -103,22 +103,22 @@ const getStatusColor = (status: string) => {
 
 export default function ProjectGallery() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-card/30">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-card/30">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <Code className="h-8 w-8 text-primary" />
-            <h2 className="text-4xl font-bold text-foreground">Project Demo Gallery</h2>
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="flex items-center justify-center space-x-2 mb-3 sm:mb-4">
+            <Code className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Project Demo Gallery</h2>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Explore innovative projects created by our talented members. From web applications to AI solutions, 
             see the creativity and technical excellence of our community.
           </p>
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project) => {
             const ProjectIcon = project.icon
             
@@ -196,7 +196,7 @@ export default function ProjectGallery() {
         </div>
 
         {/* View All Projects */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8 sm:mt-12">
           <Button 
             className="px-4 py-2 sm:px-8 sm:py-3 text-sm sm:text-base"
             onClick={() => window.open('/projects', '_self')}
@@ -207,22 +207,22 @@ export default function ProjectGallery() {
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">25+</div>
-            <div className="text-sm text-muted-foreground">Projects Completed</div>
+            <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">25+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Projects Completed</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">8</div>
-            <div className="text-sm text-muted-foreground">Technologies Used</div>
+            <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">8</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Technologies Used</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">50+</div>
-            <div className="text-sm text-muted-foreground">Contributors</div>
+            <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">50+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Contributors</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">15+</div>
-            <div className="text-sm text-muted-foreground">Open Source</div>
+            <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">15+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Open Source</div>
           </div>
         </div>
       </div>

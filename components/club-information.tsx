@@ -44,12 +44,12 @@ const mission = [
 
 export default function ClubInformation() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-card/30">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-card/30">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <div className="flex flex-col items-center space-y-4 mb-6">
-            <div className="relative w-32 h-10">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="flex flex-col items-center space-y-3 sm:space-y-4 mb-4 sm:mb-6">
+            <div className="relative w-24 h-8 sm:w-32 sm:h-10">
               <Image 
                 src="/codenix-logo.svg" 
                 alt="CODÉNIX Logo" 
@@ -57,45 +57,45 @@ export default function ClubInformation() {
                 className="object-contain"
               />
             </div>
-            <h2 className="text-4xl font-bold text-foreground">About Codénix</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">About Codénix</h2>
           </div>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
             Girijananda Chowdhury University's premier coding club, dedicated to nurturing the next generation of software developers and tech innovators.
           </p>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
           {stats.map((stat, index) => (
             <Card key={index} className="text-center group hover:shadow-lg transition-all duration-300">
-              <CardContent className="pt-6">
-                <div className="text-4xl text-primary/70 group-hover:scale-110 transition-transform duration-300 mb-2">
-                  <stat.icon className="h-10 w-10 mx-auto" />
+              <CardContent className="pt-4 sm:pt-6">
+                <div className="text-3xl sm:text-4xl text-primary/70 group-hover:scale-110 transition-transform duration-300 mb-2">
+                  <stat.icon className="h-8 w-8 sm:h-10 sm:w-10 mx-auto" />
                 </div>
-                <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-2xl sm:text-3xl font-bold text-foreground mb-1">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">{stat.label}</div>
               </CardContent>
             </Card>
           ))}
         </div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
           {features.map((feature, index) => (
             <Card
               key={index}
-              className="rounded-xl p-6 space-y-4 group hover:shadow-lg transition-all duration-300"
+              className="rounded-xl p-4 sm:p-6 space-y-3 sm:space-y-4 group hover:shadow-lg transition-all duration-300"
               style={{
                 background: "rgba(18, 18, 18, 0.7)",
                 backdropFilter: "blur(10px)",
                 border: "1px solid rgba(212, 175, 55, 0.1)",
               }}
             >
-              <div className="text-4xl text-primary/70 group-hover:scale-110 transition-transform duration-300">
-                <feature.icon size={40} />
+              <div className="text-3xl sm:text-4xl text-primary/70 group-hover:scale-110 transition-transform duration-300">
+                <feature.icon size={32} className="sm:w-10 sm:h-10" />
               </div>
-              <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
+              <h3 className="text-lg sm:text-xl font-semibold text-foreground">{feature.title}</h3>
+              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">{feature.description}</p>
             </Card>
           ))}
         </div>

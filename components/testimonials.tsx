@@ -81,21 +81,21 @@ const renderStars = (rating: number) => {
 
 export default function Testimonials() {
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-card/30">
+    <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-card/30">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <Users className="h-8 w-8 text-primary" />
-            <h2 className="text-4xl font-bold text-foreground">Community Voices</h2>
+        <div className="text-center mb-8 sm:mb-12">
+          <div className="flex items-center justify-center space-x-2 mb-3 sm:mb-4">
+            <Users className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">Community Voices</h2>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Hear from our alumni and current members about their journey with Codénix
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {testimonials.map((testimonial) => (
             <Card 
               key={testimonial.id}
@@ -150,22 +150,22 @@ export default function Testimonials() {
         </div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">150+</div>
-            <div className="text-sm text-muted-foreground">Active Members</div>
+            <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">150+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Active Members</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">95%</div>
-            <div className="text-sm text-muted-foreground">Placement Rate</div>
+            <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">95%</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Placement Rate</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">50+</div>
-            <div className="text-sm text-muted-foreground">Alumni at Top Companies</div>
+            <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">50+</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Alumni at Top Companies</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary mb-2">4.9/5</div>
-            <div className="text-sm text-muted-foreground">Average Rating</div>
+            <div className="text-2xl sm:text-3xl font-bold text-primary mb-1 sm:mb-2">4.9/5</div>
+            <div className="text-xs sm:text-sm text-muted-foreground">Average Rating</div>
           </div>
         </div>
       </div>

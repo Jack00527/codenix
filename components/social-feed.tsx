@@ -86,7 +86,7 @@ export default function SocialFeed() {
           </p>
           
           {/* Social Links */}
-          <div className="flex justify-center space-x-6">
+          <div className="grid grid-cols-2 gap-4 max-w-md mx-auto sm:flex sm:justify-center sm:space-x-6 sm:max-w-none">
             {socialLinks.map((social) => (
               <a
                 key={social.platform}
@@ -172,7 +172,7 @@ export default function SocialFeed() {
               <p className="text-muted-foreground max-w-md">
                 Get real-time updates, behind-the-scenes content, and connect with our community
               </p>
-              <div className="flex justify-center space-x-4">
+              <div className="grid grid-cols-2 gap-4 justify-center max-w-md mx-auto sm:flex sm:space-x-4 sm:max-w-none">
                 {socialLinks.map((social) => (
                   <a
                     key={social.platform}

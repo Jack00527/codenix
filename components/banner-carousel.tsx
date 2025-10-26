@@ -46,7 +46,6 @@ const bannerData = [
 export default function BannerCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const [scrambledCodenix, setScrambledCodenix] = useState("Codénix")
 
   useEffect(() => {
     if (!isAutoPlaying) return
@@ -59,34 +58,6 @@ export default function BannerCarousel() {
 
     return () => clearInterval(interval)
   }, [isAutoPlaying])
-
-  // Simple text animation effect
-  useEffect(() => {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
-    let iteration = 0
-    const targetText = "Codénix"
-    
-    const animateText = () => {
-      setScrambledCodenix(
-        targetText
-          .split("")
-          .map((_, index) => {
-            if (index < iteration) {
-              return targetText[index]
-            }
-            return chars[Math.floor(Math.random() * chars.length)]
-          })
-          .join("")
-      )
-      
-      if (iteration < targetText.length) {
-        iteration += 1 / 3
-        setTimeout(animateText, 100)
-      }
-    }
-    
-    animateText()
-  }, [])
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => 
@@ -103,7 +74,7 @@ export default function BannerCarousel() {
   const currentItem = bannerData[currentIndex]
 
   return (
-    <section className="relative h-[300px] md:h-[350px] overflow-hidden">
+    <section className="relative h-[250px] sm:h-[300px] md:h-[350px] overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.1),transparent_50%)]" />
@@ -115,43 +86,43 @@ export default function BannerCarousel() {
 
       {/* Main Content */}
       <div className="relative z-10 h-full flex items-center justify-center">
-        <div className="text-center space-y-8 max-w-6xl mx-auto px-4">
-          {/* Reactive Codénix Visual */}
-          <div className="space-y-2">
-            <h1 className="text-3xl md:text-5xl font-bold">
+        <div className="text-center space-y-4 sm:space-y-6 md:space-y-8 max-w-6xl mx-auto px-4">
+          {/* Codénix Visual */}
+          <div className="space-y-1 sm:space-y-2">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold">
               <span className="text-gradient-gold animate-gradient-x">
-                {scrambledCodenix}
+                Codénix
               </span>
             </h1>
-            <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto animate-pulse" />
+            <div className="w-16 sm:w-24 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto animate-pulse" />
           </div>
 
           {/* Dynamic Content */}
-          <div className="min-h-[80px] flex items-center justify-center pb-8">
+          <div className="min-h-[60px] sm:min-h-[80px] flex items-center justify-center pb-4 sm:pb-6 md:pb-8">
             {currentItem.type === "quote" ? (
-              <div className="space-y-3 max-w-4xl">
-                <Quote className="h-10 w-10 text-primary/50 mx-auto" />
-                <blockquote className="text-lg md:text-xl font-medium text-foreground italic leading-relaxed">
+              <div className="space-y-2 sm:space-y-3 max-w-4xl">
+                <Quote className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 text-primary/50 mx-auto" />
+                <blockquote className="text-sm sm:text-base md:text-lg lg:text-xl font-medium text-foreground italic leading-relaxed px-2">
                   "{currentItem.content}"
                 </blockquote>
-                <cite className="text-sm text-muted-foreground">— {currentItem.author}</cite>
+                <cite className="text-xs sm:text-sm text-muted-foreground">— {currentItem.author}</cite>
               </div>
             ) : (
-              <div className="space-y-3 max-w-4xl pb-4">
-                <div className="flex items-center justify-center space-x-2 mb-2">
-                  <Calendar className="h-5 w-5 text-primary" />
-                  <span className="text-sm text-muted-foreground">Upcoming Event</span>
+              <div className="space-y-2 sm:space-y-3 max-w-4xl pb-2 sm:pb-4">
+                <div className="flex items-center justify-center space-x-2 mb-1 sm:mb-2">
+                  <Calendar className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
+                  <span className="text-xs sm:text-sm text-muted-foreground">Upcoming Event</span>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-foreground">
                   {currentItem.title}
                 </h2>
-                <p className="text-base md:text-lg text-primary font-semibold">
+                <p className="text-sm sm:text-base md:text-lg text-primary font-semibold">
                   {currentItem.subtitle}
                 </p>
-                <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+                <p className="text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto px-2">
                   {currentItem.description}
                 </p>
-                <button className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold text-sm">
+                <button className="px-4 sm:px-6 py-1.5 sm:py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 font-semibold text-xs sm:text-sm">
                   Learn More
                 </button>
               </div>
@@ -165,46 +136,47 @@ export default function BannerCarousel() {
         onClick={prevSlide}
         onMouseEnter={() => setIsAutoPlaying(false)}
         onMouseLeave={() => setIsAutoPlaying(true)}
-        className="absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border/50 hover:bg-accent transition-all duration-200 z-20"
+        className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-transparent hover:bg-background/20 backdrop-blur-sm border border-transparent hover:border-border/30 transition-all duration-200 z-20"
       >
-        <ChevronLeft className="h-6 w-6" />
+        <ChevronLeft className="h-4 w-4 md:h-6 md:w-6 text-foreground/70 hover:text-foreground" />
       </button>
       
       <button
         onClick={nextSlide}
         onMouseEnter={() => setIsAutoPlaying(false)}
         onMouseLeave={() => setIsAutoPlaying(true)}
-        className="absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-background/80 backdrop-blur-sm border border-border/50 hover:bg-accent transition-all duration-200 z-20"
+        className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-2 md:p-3 rounded-full bg-transparent hover:bg-background/20 backdrop-blur-sm border border-transparent hover:border-border/30 transition-all duration-200 z-20"
       >
-        <ChevronRight className="h-6 w-6" />
+        <ChevronRight className="h-4 w-4 md:h-6 md:w-6 text-foreground/70 hover:text-foreground" />
       </button>
 
       {/* Dots Indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-20">
         {bannerData.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`rounded-full transition-all duration-300 ${
               index === currentIndex 
-                ? "bg-primary scale-125" 
-                : "bg-muted-foreground/50 hover:bg-muted-foreground"
+                ? "bg-primary opacity-100" 
+                : "bg-muted-foreground/25 hover:opacity-50"
             }`}
+            style={{ width: '13px', height: '13px', minWidth: 'unset', minHeight: 'unset' }}
           />
         ))}
       </div>
 
       {/* Floating Code Elements */}
-      <div className="absolute top-20 left-10 opacity-20 animate-bounce">
-        <Code2 className="h-8 w-8 text-primary" />
+      <div className="absolute top-10 sm:top-20 left-4 sm:left-10 opacity-20 animate-bounce">
+        <Code2 className="h-4 w-4 sm:h-6 sm:w-6 md:h-8 md:w-8 text-primary" />
       </div>
-      <div className="absolute bottom-20 right-10 opacity-20 animate-bounce" style={{ animationDelay: "1s" }}>
-        <Code2 className="h-6 w-6 text-primary" />
+      <div className="absolute bottom-10 sm:bottom-20 right-4 sm:right-10 opacity-20 animate-bounce" style={{ animationDelay: "1s" }}>
+        <Code2 className="h-3 w-3 sm:h-4 sm:w-4 md:h-6 md:w-6 text-primary" />
       </div>
-      <div className="absolute top-1/3 right-20 opacity-20 animate-bounce" style={{ animationDelay: "2s" }}>
-        <Code2 className="h-4 w-4 text-primary" />
+      <div className="absolute top-1/3 right-8 sm:right-20 opacity-20 animate-bounce" style={{ animationDelay: "2s" }}>
+        <Code2 className="h-2 w-2 sm:h-3 sm:w-3 md:h-4 md:w-4 text-primary" />
       </div>
     </section>
   )
