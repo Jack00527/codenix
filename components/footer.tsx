@@ -91,8 +91,9 @@ export default function Footer() {
           <div className="md:col-span-6 space-y-4">
             <h4 className="text-lg font-semibold text-foreground">Find Us</h4>
             <div className="w-full h-64 rounded-lg overflow-hidden border border-border/50">
+
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3582.6494!2d91.7569!3d26.1690!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDEwJzA4LjQiTiA5McKwNDUnMjQuOCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3581.94931953026!2d91.62025427601885!3d26.133195393153827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x375a43f4d6353b7d%3A0x5089bf544bea3b23!2sGirijananda%20Chowdhury%20University!5e0!3m2!1sen!2sin!4v1762218787418!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
